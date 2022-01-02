@@ -12,9 +12,9 @@ This extension provides the following TOML-related functions:
 
 They return the value encoded in appropriate PHP type or `null` on failure. Errors can be accessed in `YellowToml::$error`.
 
-The most used features of TOML are supported: bare keys, dotted bare keys, basic strings, numbers, booleans, dates and times (returned as strings), arrays, tables, arrays of tables, and comments.
+The most used features of TOML are supported: bare keys, dotted bare keys, basic strings, literal strings, numbers, booleans, dates and times (returned as strings), arrays, tables, arrays of tables, and comments.
 
-Not supported are: quoted keys, literal and multiline strings, multiline arrays, inline tables.
+Not supported are: quoted keys, multiline strings, multiline arrays, inline tables.
 
 ## Example
 

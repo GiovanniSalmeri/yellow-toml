@@ -18,6 +18,8 @@ class YellowToml {
                     if ($value===null || self::isMap($value)) {
                         if (strtotime($matches[2]) && preg_match('/^\d\d\d\d-\d\d-\d\d([T ]\d\d:\d\d:\d\d(\.\d{1,6})?(Z|[-+]\d\d:\d\d)?)?$/', $matches[2]) || preg_match('/^(\d\d):(\d\d):(\d\d)(\.\d{1,6})?$/', $matches[2], $parts) && $parts[1]<=23 && $parts[2]<=59 && $parts[3]<=59) {
                             $value = $matches[2];
+                        } elseif (preg_match('/^\'.*\'$/', $matches[2])) {
+                            $value = substr($matches[2], 1, -1);
                         } else {
                             self::$error = "Invalid value at line ".(self::$lineNumber+1);
                             return null;
