@@ -16,7 +16,7 @@ class YellowToml {
                 if (preg_match('/^\s*([a-z\d_.\-]+?)\s*=\s*(.*?)\s*$/i', $line, $matches)) {
                     $value = json_decode($matches[2], true);
                     if ($value===null || self::isMap($value)) {
-                        if (strtotime($matches[2]) && preg_match('/^\d\d\d\d-\d\d-\d\d([T ]\d\d:\d\d:\d\d(\.\d{1,6})?(Z|[-+]\d\d:\d\d)?)?$/', $matches[2]) || preg_match('/^(\d\d):(\d\d):(\d\d)(\.\d{1,6})?$/', $matches[2], $parts) && $parts[1]<=23 && $parts[2]<=59 && $parts[3]<=59) {
+                        if (self::validTomlDatetime($matches[2])) {
                             $value = $matches[2];
                         } elseif (preg_match('/^\'.*\'$/', $matches[2])) {
                             $value = substr($matches[2], 1, -1);
@@ -59,6 +59,15 @@ class YellowToml {
             }
         }
         return false;
+    }
+
+    private static function validTomlDatetime($string) {
+        return (preg_match('/^(\d\d\d\d)-(\d\d)-(\d\d)(?:[T ](\d\d):(\d\d):(\d\d)(?:\.\d{1,6})?(?:Z|[-+](\d\d):(\d\d))?)?$/', $string, $parts) && 
+            checkdate($parts[2], $parts[3], $parts[1]) && 
+            (!isset($parts[4]) || $parts[4]<=23 && $parts[5]<=59 && $parts[6]<=59) && 
+            (!isset($parts[7]) || $parts[7]<=23 && $parts[8]<=59)) ||
+            (preg_match('/^(\d\d):(\d\d):(\d\d)(\.\d{1,6})?$/', $string, $parts) && 
+            ($parts[1]<=23 && $parts[2]<=59 && $parts[3]<=59));
     }
 
     private static function setDeep(&$var, $keysArray, $value) {
