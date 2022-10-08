@@ -53,7 +53,7 @@ This is the same [example used in TOML site](https://toml.io/en/), adapted. Note
 
 ## Installation
 
-[Download extension](https://github.com/GiovanniSalmeri/yellow-toml/archive/master.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
+[Download extension](https://github.com/GiovanniSalmeri/yellow-toml/archive/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
 
 ## Developer
 
