@@ -57,4 +57,4 @@ This is the same [example used in TOML site](https://toml.io/en/), adapted. Note
 
 ## Developer
 
-Giovanni Salmeri. [Get help](https://github.com/GiovanniSalmeri/yellow-toml/issues).
+Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/)
