@@ -2,6 +2,10 @@ Toml 0.8.18
 ===========
 Minimal TOML parser.
 
+## How to install an extension
+
+[Download ZIP file](https://github.com/GiovanniSalmeri/yellow-toml/archive/main.zip) and copy it into your `system/extensions` folder. [Learn more about extensions](https://github.com/annaesvensson/yellow-update).
+
 ## How to use Toml from other extensions
 
 This extension provides the following TOML-related functions:
@@ -51,10 +55,6 @@ $parsed = toml_parse($toml);
 
 This is the same [example used in TOML site](https://toml.io/en/), adapted. Note the writing in two lines of `temp_targets`, since inline tables are not supported.
 
-## Installation
-
-[Download extension](https://github.com/GiovanniSalmeri/yellow-toml/archive/main.zip) and copy zip file into your `system/extensions` folder. Right click if you use Safari.
-
 ## Developer
 
-Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/)
+Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/).
