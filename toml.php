@@ -112,7 +112,7 @@ function toml_parse($input) {
     return YellowToml::parse($input);
 }
 function toml_parse_file($filename) {
-    $content = file_get_contents($filename);
+    $content = @file_get_contents($filename);
     if (substr($content, 0, 3)=="\xef\xbb\xbf") $content = substr($content, 3);
     return $content===false ? false : YellowToml::parse($content);
 }
