@@ -2,7 +2,7 @@
 // Toml extension, https://github.com/GiovanniSalmeri/yellow-toml
 
 class YellowToml {
-    const VERSION = "0.8.18";
+    const VERSION = "0.9.1";
 
     private static $lineNumber;
     public static $error;
