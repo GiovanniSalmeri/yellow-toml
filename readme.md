@@ -1,6 +1,6 @@
-# Toml 0.9.1
+# Toml 1.0.0
 
-Minimal TOML parser.
+Minimal TOML parser. Developed by Giovanni Salmeri.
 
 ## How to install an extension
 
@@ -55,6 +55,4 @@ $parsed = toml_parse($toml);
 
 This is the same [example used in TOML site](https://toml.io/en/), adapted. Note the writing in two lines of `temp_targets`, since inline tables are not supported.
 
-## Developer
-
-Giovanni Salmeri. [Get help](https://datenstrom.se/yellow/help/).
+Do you have questions? [Get help](https://datenstrom.se/yellow/help/).
